@@ -10,7 +10,7 @@ This app predicts the **Top Hits** song!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    year = st.sidebar.slider('Year', 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
+    year = st.sidebar.slider('Year', 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
     danceability = st.sidebar.slider('danceability', 0.5, 0.6, 0.7, 0.8, 0.9)
     energy = st.sidebar.slider('energy', 0.5, 0.6, 0.7, 0.8, 0.9)
     key = st.sidebar.slider('key', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
