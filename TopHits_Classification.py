@@ -1,47 +1,43 @@
-import streamlit as st
+import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gs
+import seaborn as sns
+sns.set()
+import warnings
+warnings.filterwarnings('ignore')
 
-st.write("""
-# Top Hits Song
-This app predicts the **Top Hits** song!
-""")
+df = pd.read_csv("https://raw.githubusercontent.com/Noorazwana/Top-Hits-Spotify/main/songs_normalize.csv")
+df.head()
 
-st.sidebar.header('User Input Parameters')
+df.tail
 
-df  user_input_features():
-    danceability = st.sidebar.slider('danceability', 0.5, 0.6, 0.7, 0.8, 0.9)
-    energy = st.sidebar.slider('energy', 0.5, 0.6, 0.7, 0.8, 0.9)
-    key = st.sidebar.slider('key', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    data = {'danceability': danceability,
-            'energy': energy,
-            'genre': genre}
-    features = pd.DataFrame(data, index=[0])
-    return features
+df.year.unique()
 
-df = user_input_features()
+s1=(len(df.query('year==1998')))
+s2=(len(df.query('year==1999')))
+s3=(len(df.query('year==2020')))
+s= s1+s2+s3
+print("The total number of songs:",s)
 
-st.subheader('User Input parameters')
-st.write(df)
+df_years_drop = df[(df['year'] <2000) | (df['year'] > 2019)].index
+df = df.drop(df_years_drop) #removing the rows from dataframe based on the above condition
 
-TopHitsSpotify = pd.read_csv('songs_normalize.csv')
-st.write('artist')
-X = songs_normalize.drop('genre',axis=1)
-Y = songs_normalize.genre
+df.shape
+df.columns
+df.dtypes
 
-clf = RandomForestClassifier()
-clf.fit(X, Y)
+artist=df['artist'].value_counts()
+artist
 
-prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
+tp_artists_songs= artist[:5]
+tp_artists_name =artist[:5].index
+fig = plt.figure(figsize = (10, 5))
+plt.bar(tp_artists_name,tp_artists_songs,width = 0.4,color="forestgreen")
+plt.xlabel("Artists")
+plt.ylabel("No of Songs")
+plt.title('Top Artists with Hit Songs',color = 'black',fontsize = 20)
+plt.show()
 
-st.subheader('Class labels and their corresponding index number')
-st.write(song_normalize.genre)
-
-st.subheader('Prediction')
-#st.write(iris.species[prediction])
-st.write(prediction)
-
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
-
+genre = df['genre'].value_counts()
+genre
