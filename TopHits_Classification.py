@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gs
-import seaborn as sns
+
 sns.set()
 import warnings
 warnings.filterwarnings('ignore')
