@@ -38,7 +38,7 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(Top Hits.genre)
+st.write(song_normalize.genre)
 
 st.subheader('Prediction')
 #st.write(iris.species[prediction])
