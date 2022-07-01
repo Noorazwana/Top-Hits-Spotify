@@ -27,7 +27,7 @@ st.subheader('User Input parameters')
 st.write(df)
 
 TopHitsSpotify = pd.read_csv('songs_normalize.csv')
-st.write(Top Hits)
+st.write('artist')
 X = Top Hits.drop('genre',axis=1)
 Y = Top Hits.genre
 
