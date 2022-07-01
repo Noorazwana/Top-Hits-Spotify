@@ -9,7 +9,7 @@ This app predicts the **Top Hits** song!
 
 st.sidebar.header('User Input Parameters')
 
-def user_input_features():
+user_input_features():
     danceability = st.sidebar.slider('danceability', 0.5, 0.6, 0.7, 0.8, 0.9)
     energy = st.sidebar.slider('energy', 0.5, 0.6, 0.7, 0.8, 0.9)
     key = st.sidebar.slider('key', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
