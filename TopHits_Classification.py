@@ -28,8 +28,8 @@ st.write(df)
 
 TopHitsSpotify = pd.read_csv('songs_normalize.csv')
 st.write('artist')
-X = Top Hits.drop('genre',axis=1)
-Y = Top Hits.genre
+X = songs_normalize.drop('genre',axis=1)
+Y = songs_normalize.genre
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
