@@ -26,10 +26,10 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-iris = pd.read_csv('IRIS.csv')
-st.write(iris)
-X = iris.drop('species',axis=1)
-Y = iris.species
+Top Hits Spotify = pd.read_csv('songs_normalize.csv')
+st.write(Top Hits)
+X = Top Hits.drop('genre',axis=1)
+Y = Top Hits.genre
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
@@ -38,7 +38,7 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(iris.species)
+st.write(Top Hits.genre)
 
 st.subheader('Prediction')
 #st.write(iris.species[prediction])
@@ -47,4 +47,3 @@ st.write(prediction)
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
 
-st.image('https://raw.githubusercontent.com/Noorazwana/IRIS/main/Iris%20species.png')
