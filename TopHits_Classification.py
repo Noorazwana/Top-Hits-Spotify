@@ -13,7 +13,7 @@ def user_input_features():
     year = st.sidebar.slider('Year', 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010)
     danceability = st.sidebar.slider('danceability', 0.5, 0.6, 0.7, 0.8, 0.9)
     energy = st.sidebar.slider('energy', 0.5, 0.6, 0.7, 0.8, 0.9)
-    genre = st.sidebar.slider('genre', pop, rock, hip hop, rnb, metal)
+    key = st.sidebar.slider('key', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     data = {'year': year,
             'danceability': danceability,
             'energy': energy,
